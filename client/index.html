@@ -9,7 +9,7 @@
 
 /* For testing */
 
-const socket = io();
+const socket = io('', { reconnection: false });
 
 socket.on('message', (m) => {
   console.log('message', m);

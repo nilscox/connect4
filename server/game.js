@@ -21,9 +21,9 @@ module.exports = class Game {
   }
 
   end() {
-    this.players.forEach(p => p.socket.close());
-
     this.broadcast({ action: 'end' });
+    this.players.forEach(p => p.socket.conn.close());
+
     this.init();
   }
 
